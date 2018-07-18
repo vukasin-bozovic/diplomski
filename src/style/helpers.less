@@ -1,0 +1,205 @@
+//
+// Helpers classes
+// --------------------------------------------------
+
+//== Font sizes
+//
+//## Text sizes classes
+
+.text-base { font-size : @font-size-base !important; }
+
+.text-lg { font-size : @font-size-large !important; }
+
+.text-xlg { font-size : @font-size-large + 5 !important; }
+
+.text-md { font-size : @font-size-medium !important; }
+
+.text-sm { font-size : @font-size-small !important; }
+
+.text-left { text-align : left !important; }
+
+.text-right { text-align : right !important; }
+
+.text-center { text-align : center !important; }
+
+.text-uppercase { text-transform: uppercase !important; }
+
+.text-cropped {
+  span {
+    display: inline;
+
+    @media (max-width: @screen-sm-min) {
+      display: none;
+    }
+    @media (max-width: @screen-md-min) {
+      display: none;
+    }
+  }
+}
+
+.letter-upp:first-letter { text-transform : uppercase !important; }
+
+//== Text color
+//
+//## Helper classes for text color
+
+.text-default { color : #3E4144 !important; }
+
+.text-gray-darker { color : @gray-darker !important; }
+
+.text-gray-dark { color : @gray-dark !important; }
+
+.text-gray-light { color : @gray-light !important; }
+
+.text-gray { color : @gray !important; }
+
+.text-info-dark { color : @brand-info-dark !important; }
+
+.text-info-light { color : @brand-info-light !important; }
+
+.text-white { color : #fff !important; }
+
+.text-success { color : @brand-success !important; }
+
+.text-danger { color : @brand-danger !important; }
+
+.text-primary { color : @brand-primary !important; }
+
+.text-primary-light { color : @brand-primary-light !important; }
+
+.text-warning-light { color : @brand-warning-light !important; }
+
+.text-deep { color : @brand-deep !important; }
+
+.text-high { color : @brand-high !important; }
+
+//==Text Type
+//
+//## Helper classes for text type
+.clickable { cursor : pointer !important; }
+
+.cursor-default{  cursor: default !important; }
+
+.underlined { text-decoration : underline !important; }
+
+.highlighted { }
+
+//== Background color
+//
+//## Text sizes classes
+
+.bg-gray-light { background-color : @gray-light !important; }
+
+.bg-gray-lighter { background-color : @gray-lighter !important; }
+
+.bg-high { background-color : @brand-high !important; }
+
+//== Spacing
+//
+//## Helper classes for spacing between and inside elements
+.divider-none { margin-bottom : 0 !important; margin-top : 0 !important; }
+
+.divider-bottom-lg { margin-bottom : 30px !important; }
+
+.divider-bottom, .divider-bottom-md { margin-bottom : 20px !important; }
+
+.divider-bottom-sm { margin-bottom : 10px !important; }
+
+.divider-bottom-xs { margin-bottom : 5px !important; }
+
+.divider-bottom-none { margin-bottom : 0 !important; }
+
+.divider-top, .divider-top-md { margin-top : 20px !important; }
+
+.divider-top-sm { margin-top : 10px !important; }
+
+.divider-top-xs { margin-top : 5px !important; }
+
+.divider-top-none { margin-top : 0 !important; }
+
+.divider-reverse-bottom, .divider-reverse-bottom-md { margin-bottom : -20px !important; }
+
+.divider-reverse-bottom-sm { margin-bottom : -10px !important; }
+
+.divider-reverse-top, .divider-reverse-top-md { margin-top : -20px !important; }
+
+.divider-reverse-top-sm { margin-top : -10px !important; }
+
+.pad-none { padding : 0 !important; }
+
+.pad-top-none { padding-top : 0 !important; }
+
+.pad-left-none { padding-left : 0 !important; }
+
+.pad-right-none { padding-right : 0 !important; }
+
+.pad-bottom-none { padding-bottom : 0 !important; }
+
+//==Display Table
+//
+//## Helper classes for creating table layout
+.d-table { display : table; width : 100%; }
+
+.d-table-row { display : table-row; }
+
+.d-table-cell {
+  display : table-cell; vertical-align : top;
+
+  &.va-middle { vertical-align : middle; }
+}
+
+.d-table-caption { display : table-caption; }
+
+
+//== Position
+//
+//## Center element inside parent
+.vertical-center {
+  height     : 100%;
+  width      : 100%;
+  text-align : center;
+  font       : 0/0 a;
+
+  &:before {
+    content        : " ";
+    display        : inline-block;
+    vertical-align : middle;
+    height         : 100%;
+  }
+
+  > .container {
+    max-width      : 100%;
+    display        : inline-block;
+    vertical-align : middle;
+    font-family    : @font-family-sans-serif;
+    font-size      : @font-size-base;
+    line-height    : @line-height-base;
+  }
+}
+
+.position-relative { position : relative !important; }
+
+@media (max-width : 720px) {
+  .vertical-center:before {
+    height : auto;
+  }
+}
+
+//== No Select
+//
+//## Disable user selection
+.no-select {
+  -webkit-touch-callout : none;
+  -webkit-user-select   : none;
+  -khtml-user-select    : none;
+  -moz-user-select      : none;
+  -ms-user-select       : none;
+  user-select           : none;
+}
+
+//== No border radius
+//
+//## Disable user selection
+.radius-none {
+  border-radius : 0 !important;
+}

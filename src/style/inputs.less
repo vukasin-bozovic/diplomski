@@ -1,0 +1,713 @@
+// --------------------------------------------------
+// Form groups
+// --------------------------------------------------
+
+form {
+    &.disabled {
+        .opacity(0.3);
+    }
+}
+
+label, .label {
+    font-size: inherit;
+    padding: 0;
+    display: inline-block;
+    font-weight: normal;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    -webkit-transition: transform 2s; /* For Safari 3.1 to 6.0 */
+    transition: transform 2s;
+
+    &:hover {
+        .form-control-feedback {
+            color: @brand-primary;
+
+            .btn {
+                color: @brand-primary;
+            }
+        }
+    }
+
+    &.form-group-sm {
+        margin-bottom: 10px;
+    }
+
+    &.has-feedback {
+
+        &.has-feedback-left {
+
+            input.form-control {
+                padding-left: 36px;
+                padding-right: 12px;
+            }
+
+            input.input-lg {
+                padding-left: 46px;
+            }
+
+            .form-control-feedback {
+                left: 0;
+            }
+        }
+
+        &.has-feedback-right {
+
+            input.form-control {
+                padding-right: 36px;
+                padding-left: 12px;
+            }
+
+            input.input-lg {
+                padding-right: 46px;
+            }
+        }
+
+        //Autocomplete input with suggestion feedback
+        .form-control-feedback {
+            bottom: 0;
+            top: auto;
+            color: @gray;
+            -moz-transition: color .2s ease-in;
+            -o-transition: color .2s ease-in;
+            -webkit-transition: color .2s ease-in;
+            transition: color .2s ease-in;
+
+            &.control-feedback-nolabel {
+                top: 2px;
+            }
+        }
+    }
+}
+
+.form-group-ver-sep {
+    color: @gray-separator;
+    padding: 0 10px;
+}
+
+.form-inline {
+    .radio, .checkbox {
+        margin-left: 20px;
+    }
+}
+
+.form-control {
+    box-shadow: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-width: 1px;
+    border-color: @gray-separator;
+
+    &:hover {
+        border-color: @input-border-hover;
+    }
+
+    &:active, &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    &::-moz-placeholder {
+        color: #8d989b;
+    }
+    &:-ms-input-placeholder {
+        color: #8d989b;
+    }
+    &::-webkit-input-placeholder {
+        color: #8d989b;
+    }
+}
+
+.form-switch {
+    > label {
+        margin-top: 5px;
+        margin-right: 5px;
+        vertical-align: top;
+    }
+}
+
+textarea.form-control {
+    height: 100px;
+}
+
+// == Input size LG
+.input-lg {
+    font-size: @font-size-base;
+    line-height: 24px;
+    height: 52px;
+    border-radius: @input-border-radius;
+}
+
+.input-lg ~ .form-control-feedback,
+.has-feedback .control-feedback-lg {
+    line-height: 52px; /* @input-height-base; */
+}
+
+.input-lg + .form-control-feedback,
+.has-feedback .control-feedback-lg {
+    width: 52px;
+    height: 52px;
+}
+
+// == Input size MD
+.input-md {
+    font-size: @font-size-medium;
+    line-height: 20px;
+    height: 42px;
+    border-radius: @input-border-radius;
+}
+
+.input-md ~ .form-control-feedback {
+    line-height: 42px;
+}
+
+.input-md + .form-control-feedback {
+    width: 42px;
+    height: 42px;
+}
+
+// == Input size SM
+.input-sm {
+    border-radius: @input-border-radius;
+    height: 30px;
+}
+
+.input-sm ~ .form-control-feedback {
+    line-height: 30px;
+    height: 30px;
+}
+
+// == Input size XS
+.input-xs {
+    font-size: @font-size-medium;
+    height: 20px;
+    padding: 1px 5px;
+    border-radius: @input-border-radius;
+}
+
+.input-xs ~ .form-control-feedback {
+    line-height: 20px;
+}
+
+.input-xs + .form-control-feedback {
+    width: 20px;
+    height: 20px;
+}
+
+// == Disabled input
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    cursor: not-allowed;
+    background-color: #FFF;
+    opacity: 1;
+}
+
+select:disabled {
+    //color : #8d989b;
+    cursor: not-allowed;
+    background-color: #FFF;
+    opacity: 1;
+}
+
+//
+// Datepicker
+// --------------------------------------------------
+.datepicker {
+    table {
+        outline: none;
+
+        button {
+            outline: none;
+        }
+
+        .btn.btn-default[disabled] {
+            background-color: rgba(255, 255, 255, 0.2);
+
+            span {
+                opacity: 0.1;
+            }
+        }
+
+        .btn.btn-default.active {
+            color: @text-color;
+        }
+
+        .btn.btn-info.active {
+            color: white;
+        }
+
+        button .text-info {
+            color: @brand-primary;
+        }
+    }
+}
+
+.datepicker + .dropdown-menu {
+    padding: 5px;
+
+    li:last-child {
+        padding: 0 !important;
+    }
+
+    table {
+        outline: none;
+
+        button {
+            outline: none;
+        }
+
+        button .text-info {
+            color: initial;
+        }
+    }
+}
+
+//
+// Checkboxes
+// --------------------------------------------------
+
+.checkbox {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    clear: both;
+
+    label {
+        display: inline-block;
+        position: relative;
+        float: left;
+        padding-left: 5px;
+        margin: 0;
+        line-height: 16px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+
+        &::before {
+            outline: none;
+            display: block;
+            position: absolute;
+            left: 0;
+            margin-left: -20px;
+            font-family: 'icomoon';
+            content: "\e608";
+            top: 0px;
+        }
+
+        &.dark:before {
+            color: @brand-info-dark;
+        }
+
+        &.light:before {
+            color: @gray-dark;
+        }
+
+        // = Half checked
+        &.indeterminate::before {
+            content: "\e629";
+        }
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+
+        &:focus + label::before {
+            .tab-focus();
+            //      color : @gray;
+        }
+
+        &:checked + label::before {
+            content: "\e606";
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+
+            &::before {
+                color: @gray-lighter;
+            }
+        }
+    }
+
+    &.checkbox-circle label::before {
+        border-radius: 50%;
+    }
+
+    &.checkbox-inline {
+        margin-top: 0;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    &.checkbox-nolabel {
+        padding: 0;
+
+        label {
+            padding: 0;
+            float: none;
+
+            &::before {
+                padding: 0 5px;
+                margin: 0;
+                position: static;
+                left: auto;
+            }
+        }
+    }
+
+}
+
+.checkbox-variant(@parent, @color) {
+    .@{parent} input[type="checkbox"]:checked + label {
+        &::before {
+            color: @color;
+        }
+    }
+    .@{parent} label.indeterminate {
+        &::before {
+            color: @color;
+        }
+    }
+}
+
+.checkbox-variant(checkbox-default, @gray);
+.checkbox-variant(checkbox-danger, @brand-danger);
+.checkbox-variant(checkbox-info, @brand-info);
+.checkbox-variant(checkbox-warning, @brand-warning);
+.checkbox-variant(checkbox-success, @brand-success);
+.checkbox-variant(checkbox-primary, @brand-primary);
+
+//
+// Radios
+// --------------------------------------------------
+
+.radio {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
+
+    label {
+        display: inline-block;
+        position: relative;
+        padding-left: 5px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: -20px;
+            border: 1px solid @gray-separator;
+            border-radius: 50%;
+            background-color: #fff;
+            .transition(border 0.15s ease-in-out);
+        }
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+            content: " ";
+            width: 11px;
+            height: 11px;
+            left: 3px;
+            top: 3px;
+            margin-left: -20px;
+            border-radius: 50%;
+            background-color: @gray;
+            .scale(0, 0);
+            .transition-transform(.1s cubic-bezier(.8, -0.33, .2, 1.33));
+            //curve - http://cubic-bezier.com/#.8,-0.33,.2,1.33
+        }
+    }
+
+    input[type="radio"] {
+        opacity: 0;
+
+        &:focus + label::before {
+            .tab-focus();
+        }
+
+        &:checked + label::after {
+            .scale(1, 1);
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+
+            &::before {
+                cursor: not-allowed;
+            }
+        }
+
+    }
+
+    &.radio-inline {
+        margin-top: 0;
+    }
+}
+
+.radio-variant(@parent, @color) {
+    .@{parent} input[type="radio"] {
+        & + label {
+            &::after {
+                background-color: @color;
+            }
+        }
+        &:checked + label {
+            &::before {
+                border-color: @color;
+            }
+            &::after {
+                background-color: @color;
+            }
+        }
+    }
+}
+
+.radio-variant(radio-default, @gray);
+.radio-variant(radio-danger, @brand-danger);
+.radio-variant(radio-info, @brand-info);
+.radio-variant(radio-warning, @brand-warning);
+.radio-variant(radio-success, @brand-success);
+.radio-variant(radio-primary, @brand-primary);
+
+//
+// UI Select - Custom styles
+// --------------------------------------------------
+.select-list {
+
+    .ui-select-toggle {
+        border: 1px solid @gray-separator;
+        height: 52px;
+        border-radius: @input-border-radius;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+    .btn-default-focus {
+        background-color: transparent;
+        border: 0;
+
+        .form-control {
+            border: 1px solid @brand-primary;
+            box-shadow: none;
+        }
+    }
+
+    &.select-list-md {
+        .form-control {
+            height: 42px;
+            padding: 10px 25px 10px 15px;
+            line-height: 21px;
+            border-radius: @input-border-radius;
+            box-shadow: none;
+            border-width: 1px;
+            font-size: 14px;
+        }
+    }
+
+    &.select-list-lg {
+
+        .form-control {
+            height: 52px;
+            padding: 10px 20px;
+            line-height: 32px;
+            border-radius: @input-border-radius;
+            box-shadow: none;
+            border-width: 1px;
+            font-size: 16px;
+        }
+    }
+}
+
+//
+// Dropdown
+// --------------------------------------------------
+.dropdown {
+    &.open {
+        .caret {
+            transform: rotate(180deg);
+        }
+    }
+
+    .dropdown-toggle {
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+
+        &:hover {
+            border-color: @input-border-hover !important;
+        }
+
+        .caret {
+            -webkit-transition: transform 0.2s ease-out;
+            -moz-transition: transform 0.2s ease-out;
+            -o-transition: transform 0.2s ease-out;
+            transition: transform 0.2s ease-out;
+        }
+    }
+}
+
+//
+// Dropdown Multiselect
+// --------------------------------------------------//
+.dropdown-multiselect {
+    width: 100%;
+
+    &.open {
+        .dropdown-toggle.btn.btn-default {
+            background-color: white;
+            outline: @brand-info;
+            box-shadow: none;
+            color: @gray-dark;
+        }
+
+        .caret {
+            transform: rotate(180deg);
+        }
+    }
+
+    .dropdown-toggle {
+        border-radius: @input-border-radius;
+        font-size: @font-size-medium;
+        min-width: 110px;
+        width: 100%;
+        text-align: left;
+        background-color: #fff;
+        outline: #f5f5dc;
+        box-shadow: none;
+        border: 1px solid @gray-separator !important;
+        padding: 10px 15px;
+        color: @gray-dark;
+
+        &:hover, &:focus {
+            border-color: @input-border-hover !important;
+            background-color: white;
+            color: @gray-dark;
+        }
+
+        &:focus {
+            border-color: @brand-primary !important;
+        }
+
+        .caret {
+            color: @text-color;
+            position: absolute;
+            height: 10px;
+            top: 50%;
+            right: 15px;
+            margin-top: -5px;
+            border-top: 10px solid;
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+            -webkit-transition: transform 0.2s ease-out;
+            -moz-transition: transform 0.2s ease-out;
+            -o-transition: transform 0.2s ease-out;
+            transition: transform 0.2s ease-out;
+        }
+    }
+
+    .dropdown-menu {
+        z-index: 1;
+        min-width: 240px;
+
+        li:nth-child(1), li:nth-child(2) {
+            display: inline-block;
+            margin: 5px 0 0 15px;
+
+            a {
+                padding: 0;
+                cursor: pointer;
+            }
+        }
+
+        li:nth-child(2) {
+            margin-right: 15px;
+        }
+
+        li > a {
+            color: @text-color;
+
+            &:hover, &:focus {
+                background-color: white;
+                color: black;
+                outline: none;
+            }
+        }
+
+        .active {
+            a, a:hover, a:focus {
+                background-color: #fff;
+            }
+
+            .checkbox > label::before {
+                content: "\e606";
+                color: @brand-primary;
+            }
+        }
+    }
+
+    .checkbox {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        > label:before {
+            color: @gray-dark;
+        }
+    }
+
+    ul {
+        max-width: 400px;
+    }
+
+    &.ng-invalid > button {
+        border-color: @alert-danger-border;
+    }
+}
+
+// Datepicker
+// --------------------------------------------------
+.form-group-datepicker table {
+
+    // == Day ceil
+    .btn-default {
+
+        &.active {
+            color: @brand-primary;
+
+            //span { color : white; }
+
+            &[disabled] {
+                color: @brand-primary;
+            }
+        }
+
+        &[disabled] {
+            color: @gray-light;
+        }
+    }
+}
+
+//
+// Field validation
+// --------------------------------------------------
+form[novalidate] input {
+}
+
+//.field-error { color: @brand-danger; }
+//
+//.field-warning { color: @brand-warning; }
+
+input[required].ng-pristine {
+    //  border-color : @brand-primary;
+}
+
+input.ng-invalid.ng-dirty {
+    //border-color: @brand-danger;
+}
+
+input.ng-valid.ng-dirty {
+    //  border-color : @brand-success;
+}

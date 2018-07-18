@@ -1,0 +1,162 @@
+@import '../../../../../node_modules/bootstrap/less/variables';
+
+.main-nav {
+  background-color: @brand-info;
+  width: 100%;
+
+  .navbar {
+    margin-bottom: 0;
+    border: 0;
+
+    li {
+      &.light {
+        > a, > span {
+          font-family: @font-family-base;
+        }
+      }
+      > a {
+        color: #fff;
+        border-left: 1px solid #203141;
+        font-size: @font-size-base;
+        line-height: 22px;
+        display: block;
+        padding: 9px 15px;
+
+        &:hover, &:focus, &:active {
+          background-color: @brand-info;
+          color: @gray;
+        }
+      }
+      > span {
+        color: #fff;
+        border-left: 1px solid #203141;
+        font-size: @font-size-base;
+        line-height: 22px;
+        display: block;
+        padding: 9px 15px;
+
+        &:hover, &:focus, &:active {
+          background-color: @brand-info;
+          color: #fff;
+        }
+      }
+    }
+
+    li.active {
+      > a {
+        color: @gray;
+      }
+    }
+
+    li.disabled {
+      opacity: 0.2;
+
+      @media (max-width: @screen-sm-max) {
+        display: none;
+      }
+    }
+
+    li > ul.dropdown-menu {
+      min-width: 200px;
+      right: 0;
+      left: auto;
+
+      > li {
+        padding: 0;
+        margin: 0;
+
+        a {
+          display: block;
+          color: @text-color;
+          text-decoration: none;
+          clear: both;
+          padding: 10px 15px;
+          font-family: @font-family-base;
+          font-size: 16px;
+          border-bottom: 1px solid #c5cacd;
+          cursor: pointer;
+          line-height: normal;
+          text-transform: none;
+          word-wrap: break-word;
+          white-space: normal;
+
+          &:hover {
+            background-color: @gray-light;
+            color: @text-color;
+          }
+        }
+
+        &:last-child {
+          border-left: 0 !important;
+        }
+      }
+    }
+  }
+
+  .navbar.pull-right {
+    width: auto;
+  }
+
+}
+
+
+.main-nav .navbar {
+
+  .logo {
+    width: 51px;
+    padding: 12px 15px 12px 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  li > a {
+    border-left: 0;
+    font-size: 15px;
+    font-family: @font-family-base;
+    line-height: 20px;
+    display: block;
+    padding: 20px 25px;
+    text-transform: uppercase;
+  }
+
+  li > a:hover, li > a:focus, li > a:active {
+    background-color: @brand-info;
+  }
+
+  li > span:hover, li > span:focus, li > span:active {
+    color: #fff;
+    background-color: @brand-info;
+  }
+
+  li.active {
+    a {
+      background-color: @brand-info;
+      color: #fff;
+    }
+  }
+
+  li.disabled {
+    a {
+      background-color: @brand-info;
+      color: #fff;
+    }
+  }
+
+  &.pull-left {
+    border-right: 0;
+  }
+
+  &.pull-right {
+    li {
+      > span {
+        border: 0;
+        display: block;
+        line-height: 20px;
+        padding: 20px 15px;
+      }
+    }
+  }
+
+}

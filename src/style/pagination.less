@@ -1,0 +1,113 @@
+.pagination {
+  margin : 0;
+
+  > li {
+    &:first-child {
+      a {
+        border-left : 0;
+      }
+    }
+  }
+
+  > li > a,
+  > li > span {
+                     /* position: relative; */
+    float            : left;
+    padding          : 12px 21px;
+    font-size        : @font-size-medium;
+    line-height      : 1.42857143;
+    text-decoration  : none;
+                     //color: #34495E;
+    background-color : #FFF;
+    border           : 0;
+    border-left      : 1px solid @gray-separator;
+    margin-left      : -1px;
+  }
+
+  > li > a:hover,
+  > li > span:hover,
+  > li > a:focus,
+  > li > span:focus {
+    background-color : #EEE;
+    border-color     : #DDD;
+  }
+  > li > a:focus,
+  > li > span:focus {
+    background-color : #fff;
+    border-color     : #DDD;
+  }
+
+  > .active > a,
+  > .active > span,
+  > .active > a:hover,
+  > .active > a:focus,
+  > .active > span:hover {
+    z-index          : 2;
+    color            : #FFF;
+    background-color : @state-passive-bg;
+    border-color     : @gray-separator;
+    cursor           : default;
+  }
+
+  > .disabled > span,
+  > .disabled > span:hover,
+  > .disabled > span:focus,
+  > .disabled > a,
+  > .disabled > a:hover,
+  > .disabled > a:focus {
+    color            : #ecf0f1;
+    background-color : #fff;
+    border-color     : #ddd;
+    cursor           : not-allowed;
+  }
+
+  input[type="text"] {
+    width   : 35px;
+    display : inline-block;
+    .border-radius(0);
+  }
+}
+
+.pagination-passive {
+  .pagination {
+    > li > a,
+    > li > span {
+      background-color : @gray-light;
+      border-color     : @gray;
+    }
+
+    > li > a:hover,
+    > li > span:hover,
+    > li > a:focus,
+    > li > span:focus {
+      background-color : @gray;
+      border-color     : @gray;
+    }
+    > li > a:focus,
+    > li > span:focus {
+      background-color : @gray;
+      border-color     : @gray;
+    }
+
+    > .active > a,
+    > .active > span,
+    > .active > a:hover,
+    > .active > a:focus,
+    > .active > span:hover {
+      color            : @link-color;
+      background-color : @gray;
+      border-color     : @gray;
+    }
+
+    > .disabled > span,
+    > .disabled > span:hover,
+    > .disabled > span:focus,
+    > .disabled > a,
+    > .disabled > a:hover,
+    > .disabled > a:focus {
+      color            : #fff;
+    }
+  }
+}
+
+

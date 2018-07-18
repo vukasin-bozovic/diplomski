@@ -1,0 +1,780 @@
+//
+// Panel custom
+// --------------------------------------------------
+.panel {
+    -ms-box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 10px;
+    position: relative;
+    webkit-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -ms-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear;
+    .transition(opacity 0.2s ease-in-out);
+    .word-wrap();
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:first-child {
+        margin-bottom: 10px;
+    }
+
+    &.panel-disabled {
+        .opacity(0.2);
+        pointer-events: none;
+    }
+
+    .panel-label {
+        display: table-caption;;
+    }
+
+    .panel-heading {
+        .clearfix();
+        padding: 15px 20px 15px 20px;
+        transition: background-color 0.2s ease;
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &.has-feedback {
+            .header-feedback {
+                float: left;
+                display: block;
+                margin-right: 5px;
+            }
+
+            .panel-title {
+                float: left;
+                display: block;
+                line-height: 26px;
+            }
+        }
+
+        &.has-feedback-left {
+            .header-feedback {
+                float: left;
+            }
+            .panel-title {
+                float: left;
+            }
+        }
+
+        &.has-feedback-right {
+            .header-feedback {
+                float: right;
+            }
+            .panel-title {
+                float: left;
+            }
+        }
+    }
+
+    .panel-title {
+        font-size: @font-size-large;
+        line-height: 23px;
+        text-align: left;
+
+        //&:first-letter {
+        //  text-transform : uppercase;
+        //  line-height : 18px;
+        //}
+
+        &.accordion-toggle i {
+            line-height: 28px;
+        }
+
+        &.has-btn {
+            position: relative;
+            padding-right: 45px;
+
+            .dropdown {
+                position: absolute;
+                right: -10px;
+                top: -5px;
+            }
+        }
+
+        .clickable {
+            border-bottom: 1px solid;
+        }
+    }
+
+    .panel-body {
+        padding: @panel-body-padding;
+    }
+
+    .panel-footer {
+        .clearfix();
+        padding: @panel-body-padding;
+    }
+
+    //== Panel sizes
+    //
+    //## Define padding size on panel
+
+    &.panel-md {
+        &.panel-table {
+            > .panel-heading, > .panel-footer {
+                .panel-cell {
+                    padding: 10px 15px;
+
+                    &.clickable {
+                        padding: 0;
+
+                        a {
+                            padding: 10px 15px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.panel-lg {
+        > .panel-heading {
+            padding: 20px 25px 20px 25px;
+
+            &.has-feedback-left {
+                .header-feedback {
+                    line-height: 20px;
+                }
+            }
+
+            &.has-feedback-right {
+                .header-feedback {
+                    line-height: 20px;
+                }
+            }
+        }
+
+        > .panel-body, > .panel-footer {
+            padding: 20px 25px;
+        }
+
+        &.panel-table {
+            > .panel-heading, > .panel-footer {
+                .panel-cell {
+                    padding: 20px 25px;
+
+                    &.clickable {
+                        padding: 0;
+
+                        a {
+                            padding: 20px 25px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin-left: -25px;
+            margin-right: -25px;
+
+            &.inner {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+    }
+
+    //== Panel type for big box panels
+    &.panel-solid {
+        border: 0;
+
+        > .panel-heading {
+            border: none;
+        }
+
+        > .panel-body {
+            border: 0;
+        }
+    }
+
+    // == Panel type for sortable list
+    &.panel-list {
+        //== Adjust style for FIRST level panel
+        border: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        .panel-desc {
+            font-size: @font-size-medium;
+        }
+
+        .collapsed .panel-cell {
+            border-bottom: 0 !important;
+        }
+
+        .panel-heading {
+            border-bottom: none;
+
+            .panel-title {
+                font-size: 18px;
+                line-height: 22px; /* width : 60%;*/
+            }
+
+            .form-control {
+                background-color: #fff;
+            }
+
+            &.collapsed {
+                .heading-cell {
+                    border-bottom: 0;
+                }
+            }
+            .ui-select-toggle {
+                border: 0;
+            }
+        }
+
+        .panel-title {
+            i {
+                line-height: 22px;
+            }
+        }
+
+        //== Adjust style for SECOND level panel
+        .panel-list {
+            margin-bottom: 0;
+
+            .panel-heading {
+                background-color: #F6F8F8;
+                border-bottom: 1px solid @gray-light;
+
+                .panel-title {
+                    font-size: 16px;
+                    line-height: 22px; /*width : 50%;*/
+                }
+
+                //Decrease padding on input by 1 because of bottom border
+                .form-control {
+                    background-color: #F6F8F8;
+                    padding: 18px 20px 17px 20px !important;
+                }
+            }
+
+            .panel-body {
+                padding: 0 !important;
+            }
+
+            //== Adjust style for THIRD level panel
+            .panel-list {
+                //&:last-child {
+                //  .panel-heading {
+                //    border-bottom : 0 !important;
+                //  }
+                //}
+
+                .panel-heading {
+                    border-bottom: 1px dashed @gray;
+
+                    .panel-title {
+                        font-size: 14px;
+                        line-height: 22px; /*width : 75%;*/
+                    }
+
+                    .form-control {
+                        padding: 17px 20px 17px 20px !important;
+                    }
+                }
+            }
+        }
+
+        //==Panel inline editing styles for input elements
+        .form-group {
+            margin-bottom: 0;
+            vertical-align: top;
+        }
+
+        input[type="text"], input[type="textarea"] {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            height: auto;
+            line-height: 18px;
+            outline: none;
+        }
+
+        //== Panel level margin
+        .transclude-body {
+            margin-left: 30px;
+        }
+    }
+
+    // == Panel type for panels style
+    &.panel-table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+
+        .panel-row {
+            display: table-row;
+        }
+
+        .panel-heading {
+            border-radius: @border-radius-base;
+
+            &.collapsed {
+                border-radius: @border-radius-base @border-radius-base 0 0;
+            }
+        }
+
+        .panel-footer {
+
+            &.collapsed {
+                border-radius: @border-radius-base @border-radius-base;
+            }
+        }
+
+        .panel-heading, .panel-footer {
+            padding: 0;
+
+            .panel-title {
+                text-align: left !important;
+                width: 100%;
+            }
+
+            .panel-cell {
+                display: table-cell;
+                padding: 15px 20px;
+                line-height: 18px;
+                min-width: 60px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 0;
+
+                &.right {
+                    border-left: 1px solid @gray-separator;
+                }
+
+                &.left {
+                    border-right: 1px solid @gray-separator;
+                }
+
+                &.full {
+                    width: 100%;
+                }
+
+                &.dropdown-item {
+                    padding: 15px 0;
+
+                    .dropdown {
+                        text-align: left;
+                        padding: 0;
+
+                        .dropdown-toggle {
+                            padding: 15px 20px;
+                            line-height: 16px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+                &.editable {
+                    width: 100%;
+                    padding: 0;
+                    position: relative;
+                    min-width: 0;
+
+                    .form-group {
+                        width: 100%;
+                    }
+
+                    .form-control {
+                        border: 0;
+                        width: 100%;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+
+                    .ui-select-toggle {
+                        padding: 15px 40px 15px 20px;
+                        height: 51px;
+                        outline: none;
+                    }
+
+                    .ui-select-search {
+                        padding-top: 18px;
+                        padding-bottom: 14px;
+                    }
+
+                    select {
+                        cursor: pointer;
+                    }
+                }
+
+                &.selectable {
+                    padding: 0;
+
+                    .checkbox, .radio {
+                        margin: 0 !important;
+
+                        label {
+                            display: block;
+                            line-height: 22px;
+
+                            &:before {
+                                padding: 15px 20px;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+
+                &.spacing-left-none {
+                    padding-left: 0;
+                }
+                &.spacing-right-none {
+                    padding-right: 0;
+                }
+            }
+
+            &.collapsed {
+                .panel-cell {
+                    border-bottom: 1px solid @gray-separator;
+                }
+            }
+        }
+
+        .panel-footer {
+            border-top-width: 1px;
+        }
+
+        .table-row {
+            padding: 0;
+            display: table-row;
+        }
+
+        .table-cell {
+            padding: 0;
+            display: table-cell;
+        }
+
+        .table-cell-full {
+            width: 100%;
+        }
+    }
+
+    // == Panel type for inline form
+    &.panel-form {
+
+        .panel-cell {
+            border-top: 1px solid @gray-separator;
+            border-bottom: 1px solid @gray-separator;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            position: relative;
+
+            &.editable {
+                .form-group {
+                    border-left: 1px solid @gray-separator;
+                    border-right: 0;
+
+                    .form-control {
+                        padding-top: 16px;
+                        padding-bottom: 16px;
+                    }
+                    .ui-select-toggle {
+                        padding-top: 14px;
+                        padding-bottom: 14px;
+                        height: 50px;
+                    }
+                }
+
+                .form-group-md {
+                    .form-control {
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                        padding-right: 40px;
+                    }
+                    .ui-select-toggle {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        height: 42px;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-right: 1px solid @gray-separator;
+            }
+
+            // == Kill borders on buttons
+            &.btn-flat {
+                border-top: 0;
+                border-bottom: 0;
+            }
+        }
+
+        .btn-clear {
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+            width: 40px;
+            height: 50px;
+            text-align: left;
+            vertical-align: middle;
+            display: block;
+            background: #fff;
+            text-indent: 10px;
+
+            span {
+                line-height: 50px;
+            }
+
+            &.btn-md {
+                height: 42px;
+
+                span {
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+
+    //== Panel colors
+    &.panel-info {
+
+        dl dd {
+            color: #c3cbd3;
+        }
+
+        hr {
+            border-color: @brand-info-dark;
+        }
+
+        &.panel-solid {
+            color: @state-info-text;
+            background-color: @state-info-bg;
+
+            .panel-heading {
+                color: @state-info-text;
+                background-color: @state-info-bg;
+            }
+        }
+
+    }
+
+    &.panel-default {
+
+        h1, h2, h3, h4, h5, .accordion-toggle {
+            color: @brand-info-dark;
+        }
+
+        &.panel-solid {
+            background-color: @gray-light;
+
+            .panel-heading, .panel-footer {
+                background-color: @gray-light;
+                color: inherit;
+            }
+        }
+
+        > .panel-heading:hover {
+            background-color: @row-hover-color;
+
+            .panel-cell > a {
+                color: @text-color;
+                cursor: default;
+            }
+
+            .panel-cell.clickable a {
+                cursor: pointer;
+                color: @link-hover-color;
+                text-decoration: underline;
+            }
+
+            &.hover-none {
+                background-color: @gray-light;
+            }
+        }
+    }
+
+    &.panel-clean {
+        background-color: #fff;
+
+        h1, h2, h3, h4, h5, .accordion-toggle {
+            color: @brand-info-dark;
+        }
+
+        &.panel-solid {
+            .panel-heading-arrow {
+                color: @gray;
+            }
+
+            .panel-heading, .panel-footer {
+                background-color: #fff;
+
+                //.clickable { border-color : #fff; }
+            }
+
+            .panel-footer {
+                border-color: @gray-separator;
+            }
+
+        }
+
+        > .panel-heading:hover {
+            background-color: @row-hover-color;
+
+            .panel-cell > a {
+                color: @text-color;
+                cursor: default;
+            }
+
+            .panel-cell.clickable a {
+                cursor: pointer;
+                color: @link-hover-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.panel-transparent {
+        background-color: transparent;
+
+        h1, h2, h3, h4, h5, .accordion-toggle {
+            color: @brand-info-dark;
+        }
+
+        &.panel-solid {
+            .panel-heading-arrow {
+                color: @gray;
+            }
+
+            .panel-heading, .panel-footer {
+                background-color: #fff;
+                .clickable {
+                    border-color: @gray-separator;
+                }
+            }
+
+            .panel-body {
+                background-color: #fff;
+            }
+
+            .panel-footer {
+                border-color: @gray-separator;
+            }
+        }
+
+        &.panel-list {
+            //== Adjust style for FIRST level panel
+            //      background-color : #fff;
+
+            .panel-heading {
+                background-color: #FFF;
+            }
+
+            .panel-desc {
+                color: #bfc3c6;
+            }
+
+            .panel-heading {
+
+                .form-control {
+                    background-color: #fff;
+                }
+            }
+
+            .panel-title {
+                i {
+                    color: @gray;
+                }
+            }
+
+            .panel-body {
+                background-color: @gray-light;
+            }
+
+            //== Adjust style for SECOND level panel
+            .panel-list {
+
+                .panel-heading {
+                    background-color: #F6F8F8;
+
+                    //Decrease padding on input by 1 because of bottom border
+                    .form-control {
+                        background-color: #F6F8F8;
+                    }
+                }
+
+                .panel-body {
+                    background-color: #F6F8F8;
+                }
+
+                //== Adjust style for THIRD level panel
+                .panel-list {
+
+                    .panel-heading {
+                        background-color: @gray-light;
+                        border-bottom: 1px dashed @gray-separator;
+
+                        .form-control {
+                            background-color: @gray-light;
+                        }
+                    }
+                    .panel-body {
+                        background-color: @gray-light;
+                    }
+
+                }
+            }
+        }
+    }
+
+    //== Placeholder sizes
+    &.panel-holder-md {
+        min-height: 350px;
+    }
+
+}
+
+.panel-header {
+    margin-bottom: 5px;
+    padding-bottom: 0;
+
+    &.panel .panel-heading .panel-cell {
+        text-align: left;
+        padding: 0 0 0 20px;
+        color: @text-color;
+    }
+
+    .panel-cell.sortable {
+        cursor: pointer;
+    }
+
+    .sort-indicator span {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    //== Panel sizes
+    //
+    //## Define padding size on panel
+    &.panel-md {
+        &.panel-table {
+            > .panel-heading, > .panel-footer {
+                .panel-cell {
+                    padding: 0 0 0 15px;
+                }
+            }
+        }
+    }
+}

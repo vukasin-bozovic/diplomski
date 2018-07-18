@@ -1,0 +1,29 @@
+<div class="container short-forecast-container">
+
+  <spinner-cover is-loading="vm.isLoading"></spinner-cover>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <ui-select ng-model="vm.selectedCity" theme="bootstrap" ng-disabled="vm.cities.length < 1"
+                 class="select-list select-list-md divider-bottom-sm" on-select="vm.onSelect()">
+        <ui-select-match placeholder="Select City">{{$select.selected.name}}
+        </ui-select-match>
+        <ui-select-choices repeat="city as city in vm.cities | filter: $select.search">
+          <span ng-bind-html="city.name | highlight: $select.search"></span>
+        </ui-select-choices>
+      </ui-select>
+    </div>
+  </div>
+
+  <div ng-if="vm.weather">
+    <weather-short ng-model="vm.weather"></weather-short>
+  </div>
+
+
+  <div ng-if="!vm.weather" class="long-forecast-empty text-center">
+    <placeholder-area heading="No city selected!" icon="info" color-code="primary">
+      In order to see the forecast, please select the city!
+    </placeholder-area>
+  </div>
+
+</div>

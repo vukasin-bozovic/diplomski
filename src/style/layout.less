@@ -1,0 +1,219 @@
+//
+// Base layout styles
+// --------------------------------------------------
+
+html {
+  overflow-y : scroll;
+}
+
+html, body {
+  height     : 100%;
+  min-height : 100%;
+}
+
+body {
+  font-family : @font-family-sans-serif;
+  color       : @text-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+
+//
+// General Typo
+// --------------------------------------------------
+a {
+  transition: color 0.2s ease-in-out;
+
+  &:hover { text-decoration : none; }
+  &:active { text-decoration : none;  color: inherit; }
+  &:focus { text-decoration : none;  color: inherit; }
+}
+
+p { margin-bottom : 20px; }
+
+code, pre, .pre {
+  padding          : 5px;
+  margin           : 10px 0;
+  background-color : #EFEFEF;
+  border           : 1px solid #DADADA;
+  border-radius    : 3px;
+}
+
+code {
+  padding : 0 3px;
+}
+
+pre {
+  margin  : 10px 0;
+  padding : 5px;
+}
+
+em { font-style : italic; }
+
+strong { font-family : 'MyriadPro-Bold'; }
+
+h1, h2 {
+  margin-top    : 0;
+  margin-bottom : 15px;
+  font-weight   : normal;
+}
+
+h3, h4, h5 {
+  margin-top    : 0;
+  margin-bottom : 5px;
+  font-weight   : normal;
+}
+
+ul, ol {
+  padding-left : 15px;
+}
+
+dl {
+  margin-bottom : 10px;
+
+  dt {
+  }
+
+  dd {
+    margin-bottom : 10px;
+  }
+}
+
+
+//
+// General Separators
+// --------------------------------------------------
+
+hr {
+  margin-top    : 20px;
+  margin-bottom : 20px;
+  border        : 0;
+  border-top    : 1px solid @hr-border;
+
+  &.sm {
+    margin-top    : 10px;
+    margin-bottom : 10px;
+  }
+
+  &.lg {
+    margin-top    : 40px;
+    margin-bottom : 40px;
+  }
+
+  &.double { height: 5px; border-bottom: 1px solid @hr-border; }
+}
+
+.separator-wrapper {
+  text-align : center;
+  overflow   : hidden;
+}
+
+.separator-text span:before,
+.separator-text span:after {
+  content    : '';
+  position   : absolute;
+  top        : 50%;
+  right      : 100%;
+  margin-top : -1px;
+  background : @hr-border;
+  height     : 1px;
+  width      : 10000px;
+  z-index    : 99;
+}
+
+.separator-text span:after {
+  right : auto;
+  left  : 100%;
+}
+
+.separator-text {
+  overflow       : hidden;
+  display        : inline;
+  text-align     : center;
+  position       : relative;
+  padding        : 0 10px;
+  margin         : 0;
+  color          : @gray-dark;
+  text-transform : uppercase;
+  line-height    : 40px;
+  font-size      : @font-size-small;
+}
+
+//
+// General layout
+// --------------------------------------------------
+.main-wrapper {
+  height     : 100%;
+  min-height : 100%;
+}
+
+.col-centered {
+  float  : none;
+  margin : 0 auto;
+}
+
+body.modal-open {
+  overflow : visible;
+}
+
+.placeholder-area {
+  text-align : center;
+  padding    : 40px;
+  border     : 1px solid @hr-border;
+  display    : block;
+}
+
+
+//
+// Main container
+// =================================================
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.container {
+  min-width : 768px;
+}
+
+.main-content {
+  min-height     : 100%;
+  padding-top    : 100px;
+  padding-bottom : 20px;
+  margin-bottom  : -150px;
+  margin-top     : -80px;
+
+  &:after {
+    content : "";
+    display : block;
+    height  : 150px;
+  }
+
+  &.ng-enter {
+    -moz-transition    : 0.4s ease-in-out all;
+    -webkit-transition : 0.4s ease-in-out all;
+    -ms-transition     : 0.4s ease-in-out all;
+    -o-transition      : 0.4s ease-in-out all;
+    transition         : 0.4s ease-in-out all;
+    opacity : 0;
+  }
+
+  &.ng-enter.ng-enter-active {
+    opacity : 1;
+  }
+}
+
+.avatar {
+  border-radius : 50%;
+  overflow      : hidden;
+}
+
+

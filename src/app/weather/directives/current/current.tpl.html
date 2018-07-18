@@ -1,0 +1,47 @@
+<div class="panel panel-default weather-current">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>Weather for {{ vm.weather.name}}, {{vm.weather.sys.country}}</h1>
+        <p>{{ vm.weather.weather[0].description}}</p>
+      </div>
+      <div class="col-sm-4">
+        <div class="text-center">
+          <img ng-src="{{vm.weather.iconUrl}}" alt="weather icon" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6 temp">
+        <b>{{vm.weather.main.temp}}°C</b>
+      </div>
+      <div class="col-sm-6 details">
+        <h3><b>Details</b></h3>
+
+        <div>
+          <div>Wind speed:</div>
+          <b>{{vm.weather.wind.speed}} m/s</b></div>
+        <div>
+          <div>Humidity:</div>
+          <b>{{vm.weather.main.humidity}} %</b></div>
+        <div>
+          <div>Pressure:</div>
+          <b>{{vm.weather.main.pressure}} hPa</b></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-sm-8">
+        <a class="clickable underlined" ui-sref="shortForecast({id: vm.weather.id})">Short Forecast</a> /
+        <a class="clickable underlined" ui-sref="longForecast({id: vm.weather.id})">Long Forecast</a>
+      </div>
+      <div class="col-sm-4 text-right">
+        {{ vm.weather.date | date:'medium'}}
+      </div>
+    </div>
+  </div>
+</div>

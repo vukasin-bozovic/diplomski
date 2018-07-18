@@ -1,0 +1,44 @@
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display : none !important;
+}
+
+//
+// Twitter Bootstrap LESS files.
+// --------------------------------------------------
+@import '~bootstrap/less/bootstrap.less';
+
+//x
+// Common Styles
+// =================================================
+@import 'variables.less';
+@import 'alerts.less';
+@import 'animations.less';
+@import 'mixings.less';
+@import 'fonts.less';
+@import 'helpers.less';
+@import 'icons.less';
+@import 'buttons.less';
+@import 'inputs.less';
+@import 'layout.less';
+@import 'tables.less';
+@import 'tabs.less';
+@import 'tooltip.less';
+@import 'lists.less';
+@import 'switch.less';
+@import 'loading-bar.less';
+@import 'ladda.less';
+@import 'ui-select.less';
+@import 'loaders.less';
+@import 'panel.less';
+@import 'modals.less';
+@import 'progress-bar.less';
+@import 'text-angular.less';
+@import 'pagination.less';
+@import 'sortable.less';
+
+@import "../app/core/core.less";

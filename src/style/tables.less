@@ -1,0 +1,111 @@
+.table {
+
+  &.table-default {
+
+    thead th {
+      border-bottom: 0;
+      padding: 0 10px 5px 10px;
+      cursor: pointer;
+      font-family: @font-family-base;
+      font-weight: normal;
+    }
+
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr:hover {
+      td a {
+        color: @text-color;
+        cursor: default;
+      }
+      td.clickable {
+        a {
+          cursor: pointer;
+          color: @link-hover-color;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    tbody tr td {
+      padding: 12px 10px;
+      border-right: 1px solid @gray-separator;
+      border-top: 1px solid @gray-separator;
+      font-size: @font-size-medium;
+      vertical-align: middle;
+      transition: background-color 0.2s ease;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      &.clickable {
+        padding: 0;
+
+        a {
+          display: block;
+          width: 100%;
+          padding: 12px 10px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    tfoot tr td {
+      padding: 10px;
+    }
+
+    .st-selected {
+      td {
+        background-color: #ffffeb;
+      }
+    }
+
+    .st-select-row {
+      text-align: center;
+      margin: -12px -10px;
+
+      .checkbox label:before {
+        outline: none;
+        padding: 15px 20px;
+        vertical-align: middle;
+      }
+    }
+
+    .table-dropdown {
+      margin: -12px -10px;
+      height: 50px;
+      line-height: 50px;
+      a {
+        display: block;
+      }
+    }
+  }
+
+}
+
+// Smart Table Specific
+.st-sort-ascent {
+  &:after {
+    content: '\25B2';
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.st-sort-descent {
+  &:after {
+    content: '\25BC';
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.st-sortable {
+  cursor: pointer;
+}

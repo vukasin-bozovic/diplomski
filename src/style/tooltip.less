@@ -1,0 +1,27 @@
+.tooltip {
+  width : auto;
+  z-index: 99999;
+}
+
+.tooltip-inner {
+  max-width: 250px;
+  padding   : 8px 12px;
+  font-size : @font-size-small;
+}
+
+.tooltip-list {
+  display         : block;
+  margin          : 0;
+  padding         : 0 10px;
+  list-style-type : decimal;
+
+  li {
+    padding    : 0;
+    margin     : 0 0 5px 0;
+    text-align : left;
+
+    &:last-child {
+      margin : 0;
+    }
+  }
+}

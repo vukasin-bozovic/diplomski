@@ -1,0 +1,86 @@
+//== Fade animation
+//
+//## Define ngShow/ngHide fade animation
+.animate-reveal-animation.ng-enter {
+  -moz-transition    : 0.4s ease-in-out all;
+  -webkit-transition : 0.4s ease-in-out all;
+  -ms-transition     : 0.4s ease-in-out all;
+  -o-transition      : 0.4s ease-in-out all;
+  transition         : 0.4s ease-in-out all;
+}
+
+.animate-reveal-animation.ng-enter {
+  opacity : 0;
+}
+
+.animate-reveal-animation.ng-enter.ng-enter-active {
+  opacity : 1;
+}
+
+//== Scale animation
+//
+//## Define ngShow/ngHide scale animation
+.animate-scale-in.ng-hide {
+  transition         : 0.0s ease-in-out;
+  transform          : scaleY(0);
+  -webkit-transition : 0.0s ease-in-out;
+  -webkit-transform  : scaleY(0); }
+
+.animate-scale-in {
+  transition         : 0.4s ease-in-out;
+  transform          : scaleY(1);
+  -webkit-transition : 0.4s ease-in-out;
+  -webkit-transform  : scaleY(1); }
+
+.animate-fade-in.ng-hide {
+  transition         : 0.0s ease-in-out;
+  transform          : scaleY(0);
+  -webkit-transition : 0.0s ease-in-out;
+  -webkit-transform  : scaleY(0); }
+
+.animate-scale-in {
+  transition         : 0.4s ease-in-out;
+  transform          : scaleY(1);
+  -webkit-transition : 0.4s ease-in-out;
+  -webkit-transform  : scaleY(1); }
+
+//== Collapse animation
+//
+//## Define ngEnter/ngLeave collapse animation
+.animate-if.ng-enter {
+  overflow           : hidden;
+  -webkit-transition : 0.8s ease max-height;
+  -moz-transition    : 0.8s ease max-height;
+  -ms-transition     : 0.8s ease max-height;
+  -o-transition      : 0.8s ease max-height;
+  transition         : 0.8s ease max-height;
+}
+
+.animate-if.ng-leave {
+  overflow           : hidden;
+  -webkit-transition : 0.4s ease max-height;
+  -moz-transition    : 0.4s ease max-height;
+  -ms-transition     : 0.4s ease max-height;
+  -o-transition      : 0.4s ease max-height;
+  transition         : 0.4s ease max-height;
+}
+
+.animate-if.ng-enter {
+  max-height : 0;
+  opacity    : 0;
+}
+
+.animate-if.ng-enter.ng-enter-active {
+  max-height : 500px;
+  opacity    : 1;
+}
+
+.animate-if.ng-leave {
+  max-height : 500px;
+  opacity    : 1;
+}
+
+.animate-if.ng-leave.ng-leave-active {
+  max-height : 0;
+  opacity    : 1;
+}

@@ -1,0 +1,36 @@
+<div class="container home-container">
+
+  <spinner-cover is-loading="vm.isLoading"></spinner-cover>
+
+  <div ng-show="vm.weathers">
+
+    <div class="text-right divider-bottom-md">
+      <a class="clickable underlined" ng-click="vm.openFavoriteModal(vm.cities)">Change Cities</a>
+    </div>
+
+    <div class="row divider-bottom-md">
+      <div class="col-sm-6">
+        <weather-current ng-model="vm.weathers[0]"></weather-current>
+      </div>
+      <div class="col-sm-6">
+        <weather-current ng-model="vm.weathers[1]"></weather-current>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <weather-current ng-model="vm.weathers[2]"></weather-current>
+      </div>
+      <div class="col-sm-6">
+        <weather-current ng-model="vm.weathers[3]"></weather-current>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="!vm.weathers" class="home-empty text-center">
+    <placeholder-area heading="No selected cities!" icon="info" color-code="primary">
+      In order to see the home page, please set your favorite <a class="clickable underlined"
+                                                                 ng-click="vm.openFavoriteModal()">cities</a>
+    </placeholder-area>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+dist
+playground
+coverage
+LICENSE
+postcss.config.js
+package.json
+package-lock.json
+karma.conf.js
+karma
+README.md
+webpack.config.js
+**/*.spec.js
+**.json
+src/tests.webpack.js
+webpack.config.js
+font-awesome.config.js

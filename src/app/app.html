@@ -1,0 +1,25 @@
+<main-navigation>
+  <li class="logo">
+    <img src="img/logo.png" alt="WA Logo">
+  </li>
+  <li ui-sref-active="active">
+    <a href ui-sref="home" ng-bind="'Home'"></a>
+  </li>
+  <li ui-sref-active="active">
+    <a href ui-sref="shortForecast" ng-bind="'Short Forecast'"></a>
+  </li>
+  <li ui-sref-active="active">
+    <a href ui-sref="longForecast" ng-bind="'Long Forecast'"></a>
+  </li>
+</main-navigation>
+
+<div class="main-content animate-reveal-animation" ui-view="mainContent"></div>
+
+<main-footer logo-src="img/footer-logo.png" version="{{appCtrl.VERSION}}">
+  <div class="divider-bottom" ng-if="appCtrl.currentCompany">
+    <label class="label text-md">User Company</label>
+    <h2><strong ng-bind="appCtrl.currentCompany.name"></strong></h2>
+  </div>
+</main-footer>
+
+<toaster-container toaster-options="appCtrl.toasterOptions"></toaster-container>

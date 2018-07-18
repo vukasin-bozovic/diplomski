@@ -1,0 +1,48 @@
+<div class="panel panel-default weather-long">
+  <div class="panel-heading">
+    <h2>{{ vm.title }}</h2>
+  </div>
+
+  <div class="panel-body">
+    <div class="row temp-container" ng-repeat="(key, value) in vm.weather">
+      <div class="panel panel-default details" ng-repeat="item in value">
+        <div class="panel-heading">
+          <h3 class="text-center"><b>{{ item.dt | date:'short'}}</b></h3>
+        </div>
+        <div class="panel-body">
+          <div>{{item.weather[0].main}},<span class="text-gray"> {{item.weather[0].description}}</span></div>
+
+          <div class="text-center">
+            <img ng-src="{{item.iconUrl}}" alt="weather icon" class="img-responsive">
+          </div>
+
+          <div>
+            <div>Temp:</div>
+            <b>{{item.main.temp}} °C</b>
+          </div>
+          <div>
+            <div>Temp min:</div>
+            <b>{{item.main.temp_min}} °C</b>
+          </div>
+          <div>
+            <div>Temp max:</div>
+            <b>{{item.main.temp_max}} °C</b>
+          </div>
+          <div>
+            <div>Humidity:</div>
+            <b>{{item.main.humidity}} %</b>
+          </div>
+          <div>
+            <div>Pressure:</div>
+            <b>{{item.main.pressure}} hPa</b>
+          </div>
+          <div>
+            <div>Wind speed:</div>
+            <b>{{item.wind.speed}} m/s</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

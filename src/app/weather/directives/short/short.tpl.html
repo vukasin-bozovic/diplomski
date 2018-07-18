@@ -1,0 +1,72 @@
+<div class="panel panel-default weather-short">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Weather for {{ vm.weather.name}}, {{vm.weather.sys.country}}</h1>
+        <h3>{{ vm.weather.weather[0].description}}</h3>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="text-center">
+          <img ng-src="{{vm.weather.iconUrl}}" alt="weather icon" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+
+      <div class="col-sm-4 details">
+        <h3><b>Main Details</b></h3>
+        <div>
+          <div>Maximal Temperature:</div>
+          <b>{{vm.weather.main.temp_max}} m/s</b>
+        </div>
+        <div>
+          <div>Minimal Temperature:</div>
+          <b>{{vm.weather.main.temp_min}} m/s</b>
+        </div>
+        <div>
+          <div>Wind speed:</div>
+          <b>{{vm.weather.wind.speed}} m/s</b>
+        </div>
+        <div>
+          <div>Humidity:</div>
+          <b>{{vm.weather.main.humidity}} %</b>
+        </div>
+        <div>
+          <div>Pressure:</div>
+          <b>{{vm.weather.main.pressure}} hPa</b>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 text-center temp">
+        <b>{{vm.weather.main.temp}}°C</b>
+      </div>
+
+      <div class="col-sm-4 additional-details">
+        <h3><b>Addition details</b></h3>
+        <div>
+          <div>Sunrise:</div>
+          <b>{{vm.weather.sys.sunrise | date:'medium'}}</b>
+        </div>
+        <div>
+          <div>Sunset:</div>
+          <b>{{vm.weather.sys.sunset | date:'medium'}}</b>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-sm-6">
+        <a class="clickable underlined" ui-sref="longForecast({id: vm.weather.id})">Long Forecast</a>
+      </div>
+      <div class="col-sm-6 text-right">
+        {{ vm.weather.date | date:'medium'}}
+      </div>
+    </div>
+  </div>
+</div>

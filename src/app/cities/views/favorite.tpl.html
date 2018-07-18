@@ -1,0 +1,19 @@
+<div class="modal-cities-favourite">
+    <div class="modal-header">
+        <h2 class="modal-title">Choose Cities</h2>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="text-md">Choose Cities (required 4 cities*)</label>
+          <div ng-dropdown-multiselect="" selected-model="vm.selectedCities" options="vm.cities"
+               checkboxes="true" extra-settings="vm.citiesDDLSettings">
+          </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-passive" ng-click="$dismiss()">Close</button>
+        <button class="btn btn-sm btn-primary" ng-disabled="vm.selectedCities.length !== 4" ng-click="vm.update()">
+            Save
+        </button>
+    </div>
+</div>
